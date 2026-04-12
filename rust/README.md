@@ -1,203 +1,271 @@
-Good move—learning Rust alongside Go gives you a serious edge (performance + safety). But don’t try to rush it. Rust demands more discipline than Go.
+# Rust
 
-Here’s a **complete Markdown checklist for Rust**, structured the same way so you can track it cleanly.
+## 1. Basics
 
----
-
-# ✅ Rust Full Learning Checklist
-
-## 🟢 1. Basics
-
-* [ ] Install Rust (rustup, cargo)
-* [ ] Hello World
-* [ ] Variables & mutability
-* [ ] Data types (int, float, bool, char, tuple)
-* [ ] Functions
-* [ ] Comments & formatting
+* [ ] Install Rust via rustup
+* [ ] Verify installation (`rustc --version`)
+* [ ] Use Cargo:
+  * [ ] `cargo new`
+  * [ ] `cargo run`
+* [ ] Hello World program
+* [ ] Variables (`let`, `mut`)
+* [ ] Constants (`const`)
+* [ ] Shadowing
+* [ ] Data types:
+  * [ ] Integers
+  * [ ] Floats
+  * [ ] Boolean
+  * [ ] Char
+* [ ] Compound types:
+  * [ ] Tuple
+  * [ ] Array
+* [ ] Operators
+* [ ] Input/Output (`println!`)
 * [ ] Control flow:
+  * [ ] `if / else`
+  * [ ] `loop`
+  * [ ] `while`
+  * [ ] `for`
 
-  * [ ] if / else
-  * [ ] loop
-  * [ ] while
-  * [ ] for
+## 2. Core Language
 
----
-
-## 🟡 2. Ownership (Most Important Concept)
-
-* [ ] Ownership rules
+* [ ] Functions
+  * [ ] Parameters
+  * [ ] Return values
+  * [ ] Expressions vs statements
+* [ ] Ownership (critical concept)
+  * [ ] Move semantics
+  * [ ] Copy trait
 * [ ] Borrowing
-* [ ] References (&, &mut)
-* [ ] Slices
-* [ ] Dangling references
-* [ ] Copy vs Move semantics
+  * [ ] Immutable references
+  * [ ] Mutable references
+* [ ] Slices (`&str`, array slices)
+* [ ] Strings:
+  * [ ] `String`
+  * [ ] `&str`
 
-👉 If you don’t master this, Rust will feel impossible.
+## 3. Structs, Enums, Pattern Matching
 
----
-
-## 🔵 3. Core Data Structures
-
-* [ ] Arrays
-* [ ] Vectors (`Vec<T>`)
-* [ ] Strings (`String`, `&str`)
-* [ ] HashMaps
 * [ ] Structs
+  * [ ] Named structs
+  * [ ] Tuple structs
+* [ ] Methods (`impl`)
 * [ ] Enums
 * [ ] Pattern matching (`match`)
+* [ ] `if let`
+* [ ] `while let`
+* [ ] Standard enums:
+
+  * [ ] `Option`
+  * [ ] `Result`
 
 ---
 
-## 🟣 4. Error Handling
+## 4. Collections & Iteration
+
+* [ ] Vectors (`Vec<T>`)
+* [ ] HashMaps
+* [ ] Iterators:
+
+  * [ ] `.iter()`
+  * [ ] `.into_iter()`
+  * [ ] `.map()`
+  * [ ] `.filter()`
+  * [ ] `.collect()`
+
+---
+
+## 5. Error Handling
 
 * [ ] `Result<T, E>`
-* [ ] `Option<T>`
-* [ ] `unwrap` vs `expect`
+* [ ] `unwrap()` vs `expect()`
 * [ ] Error propagation (`?`)
 * [ ] Custom error types
+* [ ] `thiserror` / `anyhow` basics
 
 ---
 
-## 🟠 5. Modules & Packages
+## 6. Modules & Packages
 
-* [ ] Crates
-* [ ] Modules
+* [ ] Modules (`mod`)
 * [ ] Visibility (`pub`)
-* [ ] Cargo (build system)
-* [ ] Dependencies
+* [ ] File structure
+* [ ] Crates (binary vs library)
+* [ ] Workspaces
+* [ ] Dependencies in Cargo.toml
 
 ---
 
-## 🔴 6. Traits & Generics
+## 7. Traits & Generics
 
 * [ ] Define traits
 * [ ] Implement traits
+* [ ] Derive traits (`Debug`, `Clone`)
+* [ ] Generics (`<T>`)
 * [ ] Trait bounds
-* [ ] Generics
-* [ ] Derive macros (`Debug`, `Clone`, etc.)
+* [ ] `where` clauses
 
 ---
 
-## 🟤 7. Memory & Smart Pointers
+## 8. Lifetimes
 
-* [ ] Stack vs Heap
-* [ ] `Box<T>`
-* [ ] `Rc<T>` (shared ownership)
-* [ ] `RefCell<T>`
+* [ ] Lifetime annotations
+* [ ] Borrow checker rules
+* [ ] Lifetime elision
+* [ ] Struct lifetimes
+* [ ] `'static`
+
+---
+
+## 9. Smart Pointers & Memory
+
+* [ ] `Box`
+* [ ] `Rc`
+* [ ] `Arc`
+* [ ] `RefCell`
 * [ ] Interior mutability
-* [ ] Lifetimes (basic → advanced)
+* [ ] Ownership vs shared state
 
 ---
 
-## ⚫ 8. Concurrency
+## 10. Concurrency
 
-* [ ] Threads
+* [ ] Threads (`std::thread`)
 * [ ] Message passing (channels)
-* [ ] Shared state concurrency
-* [ ] `Arc<T>`
-* [ ] Mutex
+* [ ] Shared state:
+
+  * [ ] `Mutex`
+  * [ ] `Arc`
 * [ ] Send & Sync traits
 
 ---
 
-## ⚙️ 9. File & System Programming
-
-* [ ] File I/O
-* [ ] Read/write files
-* [ ] Command line arguments
-* [ ] Environment variables
-
----
-
-## 🌐 10. Async & Networking
+## 11. Async Rust
 
 * [ ] Async/await
 * [ ] Futures
-* [ ] Tokio runtime
-* [ ] Build HTTP clients
-* [ ] Build servers
-
-Frameworks:
-
-* [ ] Actix Web
-* [ ] Axum
+* [ ] Executors
+* [ ] Use Tokio
+* [ ] Async file/network handling
 
 ---
 
-## 🧪 11. Testing & Debugging
+## 12. Macros & Advanced Features
 
-* [ ] Unit tests
-* [ ] Integration tests
-* [ ] `cargo test`
-* [ ] Benchmarking
-* [ ] Logging
-
----
-
-## 📦 12. Ecosystem Tools
-
-* [ ] Cargo commands
-* [ ] Clippy (linter)
-* [ ] Rustfmt (formatter)
-* [ ] Documentation (`cargo doc`)
-
----
-
-## 🚀 13. Advanced Rust
-
-* [ ] Lifetimes (deep understanding)
+* [ ] `macro_rules!`
+* [ ] Procedural macros (intro)
 * [ ] Unsafe Rust
 * [ ] FFI (C interop)
-* [ ] Macros (macro_rules!)
-* [ ] Procedural macros
+
+---
+
+## 13. File & Data Handling
+
+* [ ] File read/write
+* [ ] JSON (`serde`)
+* [ ] Environment variables
+* [ ] CLI args (`std::env`)
+
+---
+
+## 14. Testing & Debugging
+
+* [ ] Unit tests (`#[test]`)
+* [ ] Integration tests
+* [ ] Benchmarks
+* [ ] Logging
+* [ ] Debugging tools
+
+---
+
+## 15. Web Development
+
+* [ ] HTTP basics
+* [ ] Build API using:
+
+  * [ ] Axum or
+  * [ ] Actix Web
+* [ ] Routing
+* [ ] Middleware
+* [ ] REST API design
+
+---
+
+## 16. Database
+
+* [ ] SQL basics
+* [ ] Use:
+
+  * [ ] SQLx or
+  * [ ] Diesel
+* [ ] CRUD operations
+* [ ] Migrations
+* [ ] Connection pooling
+
+---
+
+## 17. CLI Tools
+
+* [ ] Build CLI apps
+* [ ] Argument parsing:
+
+  * [ ] Clap
+
+---
+
+## 18. Tooling
+
+* [ ] rust-analyzer
+* [ ] `clippy`
+* [ ] `rustfmt`
+
+---
+
+## 19. Advanced Topics
+
+* [ ] Generics deep dive
 * [ ] Zero-cost abstractions
-
----
-
-## 🧩 14. System Design with Rust
-
-* [ ] Build CLI tools
-* [ ] Build APIs
-* [ ] Build concurrent systems
-* [ ] Memory-safe system tools
+* [ ] Memory layout
 * [ ] Performance optimization
+* [ ] Profiling
 
 ---
 
-## 🏁 Final Mastery Checklist
+## 20. Architecture & Design
 
-* [ ] Fully understand ownership & borrowing
-* [ ] Write safe concurrent code
-* [ ] Build async applications
-* [ ] Optimize performance
-* [ ] Read complex Rust code
-* [ ] Contribute to open source
+* [ ] Project structure
+* [ ] Clean architecture
+* [ ] Error design patterns
+* [ ] API design
 
 ---
 
-## 💡 Reality Check (Important)
+## 21. DevOps & Deployment
 
-Rust is not like Go:
-
-* Go → fast to learn, productive quickly
-* Rust → slow start, but extremely powerful
-
-If you get frustrated, that’s normal. Don’t quit at ownership—that’s the barrier most people fail at.
+* [ ] Build binaries
+* [ ] Cross-compilation
+* [ ] Docker
+* [ ] CI/CD basics
 
 ---
 
-## ⚡ Smart Strategy (Highly Recommended)
+## 22. Real-World Projects
 
-Don’t learn both equally at once:
-
-* Focus 70% on Go programming language
-* 30% on Rust
-
-That way:
-
-* Go gets you building fast
-* Rust builds deep skill over time
+* [ ] CLI tool
+* [ ] REST API
+* [ ] Concurrent system
+* [ ] Full backend (auth + DB)
+* [ ] File processor
 
 ---
 
-If you want, I can combine **Go + Rust into a single weekly plan** so you don’t burn out or get stuck switching contexts.
+## Final Mastery Checklist
+
+* [ ] Understand ownership deeply
+* [ ] Use lifetimes confidently
+* [ ] Write idiomatic Rust
+* [ ] Build safe concurrent systems
+* [ ] Read complex Rust codebases
+* [ ] Contribute to crates
+
+
