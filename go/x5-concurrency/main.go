@@ -3,16 +3,32 @@ package main
 import (
 	"concurrency/order"
 	"fmt"
+	"sync"
 )
 
 func main() {
-	orders := order.Generates(20)
+	orders := order.Generates(100)
 
-	order.Process(orders)
+	waitGroup := sync.WaitGroup{}
 
-	order.UpdateOrdersStatus(orders)
+	waitGroup.Add(3)
 
-	order.ReportOrderStatus(orders)
+	go func() {
+		defer waitGroup.Done()
+		order.Process(orders)
+	}()
+
+	go func() {
+		defer waitGroup.Done()
+		order.UpdateOrdersStatus(orders)
+	}()
+
+	go func() {
+		defer waitGroup.Done()
+		order.ReportOrderStatus(orders)
+	}()
+
+	waitGroup.Wait()
 
 	fmt.Println("All operations completed. Exiting.")
 }
