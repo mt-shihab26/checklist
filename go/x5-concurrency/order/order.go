@@ -42,15 +42,13 @@ func UpdateOrdersStatus(orders []*Order) {
 }
 
 func ReportOrderStatus(orders []*Order) {
-	for i := range 5 {
-		time.Sleep(1 * time.Second)
+	time.Sleep(1 * time.Second)
 
-		fmt.Printf("--- Order Status '%d' Report ---\n", i+1)
+	fmt.Printf("--- Order Status Report ---\n")
 
-		for _, order := range orders {
-			fmt.Printf("Order %d: %s\n", order.ID, order.Status)
-		}
-
-		fmt.Println("----------------------------")
+	for _, order := range orders {
+		fmt.Printf("Order %d: %s\n", order.ID, order.Status)
 	}
+
+	fmt.Println("----------------------------")
 }

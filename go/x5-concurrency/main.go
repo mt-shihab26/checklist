@@ -11,24 +11,17 @@ func main() {
 
 	waitGroup := sync.WaitGroup{}
 
-	waitGroup.Add(3)
-
-	go func() {
-		defer waitGroup.Done()
+	waitGroup.Go(func() {
 		order.Process(orders)
-	}()
+	})
 
-	go func() {
-		defer waitGroup.Done()
+	waitGroup.Go(func() {
 		order.UpdateOrdersStatus(orders)
-	}()
-
-	go func() {
-		defer waitGroup.Done()
-		order.ReportOrderStatus(orders)
-	}()
+	})
 
 	waitGroup.Wait()
+
+	order.ReportOrderStatus(orders)
 
 	fmt.Println("All operations completed. Exiting.")
 }
