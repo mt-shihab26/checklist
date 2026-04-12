@@ -1,6 +1,10 @@
 package order
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand/v2"
+	"time"
+)
 
 type Order struct {
 	ID     int
@@ -19,6 +23,7 @@ func Generates(count int) []*Order {
 
 func Process(orders []*Order) {
 	for _, order := range orders {
+		time.Sleep(time.Duration(rand.IntN(500) * int(time.Millisecond)))
 		fmt.Printf("Processing order %d\n", order.ID)
 	}
 }
