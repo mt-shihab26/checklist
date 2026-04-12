@@ -55,25 +55,19 @@
 * [ ] `if let`
 * [ ] `while let`
 * [ ] Standard enums:
-
   * [ ] `Option`
   * [ ] `Result`
-
----
 
 ## 4. Collections & Iteration
 
 * [ ] Vectors (`Vec<T>`)
 * [ ] HashMaps
 * [ ] Iterators:
-
   * [ ] `.iter()`
   * [ ] `.into_iter()`
   * [ ] `.map()`
   * [ ] `.filter()`
   * [ ] `.collect()`
-
----
 
 ## 5. Error Handling
 
@@ -82,8 +76,6 @@
 * [ ] Error propagation (`?`)
 * [ ] Custom error types
 * [ ] `thiserror` / `anyhow` basics
-
----
 
 ## 6. Modules & Packages
 
@@ -94,8 +86,6 @@
 * [ ] Workspaces
 * [ ] Dependencies in Cargo.toml
 
----
-
 ## 7. Traits & Generics
 
 * [ ] Define traits
@@ -105,8 +95,6 @@
 * [ ] Trait bounds
 * [ ] `where` clauses
 
----
-
 ## 8. Lifetimes
 
 * [ ] Lifetime annotations
@@ -114,8 +102,6 @@
 * [ ] Lifetime elision
 * [ ] Struct lifetimes
 * [ ] `'static`
-
----
 
 ## 9. Smart Pointers & Memory
 
@@ -125,8 +111,6 @@
 * [ ] `RefCell`
 * [ ] Interior mutability
 * [ ] Ownership vs shared state
-
----
 
 ## 10. Concurrency
 
@@ -138,8 +122,6 @@
   * [ ] `Arc`
 * [ ] Send & Sync traits
 
----
-
 ## 11. Async Rust
 
 * [ ] Async/await
@@ -148,8 +130,6 @@
 * [ ] Use Tokio
 * [ ] Async file/network handling
 
----
-
 ## 12. Macros & Advanced Features
 
 * [ ] `macro_rules!`
@@ -157,16 +137,12 @@
 * [ ] Unsafe Rust
 * [ ] FFI (C interop)
 
----
-
 ## 13. File & Data Handling
 
 * [ ] File read/write
 * [ ] JSON (`serde`)
 * [ ] Environment variables
 * [ ] CLI args (`std::env`)
-
----
 
 ## 14. Testing & Debugging
 
@@ -176,50 +152,37 @@
 * [ ] Logging
 * [ ] Debugging tools
 
----
-
 ## 15. Web Development
 
 * [ ] HTTP basics
 * [ ] Build API using:
-
   * [ ] Axum or
   * [ ] Actix Web
 * [ ] Routing
 * [ ] Middleware
 * [ ] REST API design
 
----
-
 ## 16. Database
 
 * [ ] SQL basics
 * [ ] Use:
-
   * [ ] SQLx or
   * [ ] Diesel
 * [ ] CRUD operations
 * [ ] Migrations
 * [ ] Connection pooling
 
----
-
 ## 17. CLI Tools
 
 * [ ] Build CLI apps
 * [ ] Argument parsing:
-
   * [ ] Clap
-
----
 
 ## 18. Tooling
 
 * [ ] rust-analyzer
 * [ ] `clippy`
 * [ ] `rustfmt`
-
----
 
 ## 19. Advanced Topics
 
@@ -229,8 +192,6 @@
 * [ ] Performance optimization
 * [ ] Profiling
 
----
-
 ## 20. Architecture & Design
 
 * [ ] Project structure
@@ -238,16 +199,12 @@
 * [ ] Error design patterns
 * [ ] API design
 
----
-
 ## 21. DevOps & Deployment
 
 * [ ] Build binaries
 * [ ] Cross-compilation
 * [ ] Docker
 * [ ] CI/CD basics
-
----
 
 ## 22. Real-World Projects
 
@@ -257,8 +214,6 @@
 * [ ] Full backend (auth + DB)
 * [ ] File processor
 
----
-
 ## Final Mastery Checklist
 
 * [ ] Understand ownership deeply
@@ -267,5 +222,4 @@
 * [ ] Build safe concurrent systems
 * [ ] Read complex Rust codebases
 * [ ] Contribute to crates
-
 
