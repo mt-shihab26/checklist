@@ -10,5 +10,9 @@ func main() {
 
 	order.Process(orders)
 
+	order.UpdateOrdersStatus(orders)
+
+	order.ReportOrderStatus(orders)
+
 	fmt.Println("All operations completed. Exiting.")
 }
