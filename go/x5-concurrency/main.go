@@ -7,16 +7,20 @@ import (
 )
 
 func main() {
-	orders := order.Generates(100)
+	orders := order.Generates(20)
 
 	waitGroup := sync.WaitGroup{}
 
 	waitGroup.Go(func() {
-		order.Process(orders)
+		order.UpdateOrdersStatus(1, orders)
 	})
 
 	waitGroup.Go(func() {
-		order.UpdateOrdersStatus(orders)
+		order.UpdateOrdersStatus(2, orders)
+	})
+
+	waitGroup.Go(func() {
+		order.UpdateOrdersStatus(3, orders)
 	})
 
 	waitGroup.Wait()

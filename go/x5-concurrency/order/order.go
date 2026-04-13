@@ -3,12 +3,14 @@ package order
 import (
 	"fmt"
 	"math/rand/v2"
+	"sync"
 	"time"
 )
 
 type Order struct {
 	ID     int
 	Status string
+	Mutex  sync.Mutex
 }
 
 func Generates(count int) []*Order {
@@ -21,15 +23,7 @@ func Generates(count int) []*Order {
 	return orders
 }
 
-func Process(orders []*Order) {
-	for _, order := range orders {
-		time.Sleep(time.Duration(rand.IntN(500) * int(time.Millisecond)))
-
-		fmt.Printf("Processing order %d\n", order.ID)
-	}
-}
-
-func UpdateOrdersStatus(orders []*Order) {
+func UpdateOrdersStatus(no int, orders []*Order) {
 	for _, order := range orders {
 		time.Sleep(time.Duration(rand.IntN(500) * int(time.Millisecond)))
 
@@ -37,7 +31,7 @@ func UpdateOrdersStatus(orders []*Order) {
 
 		order.Status = status
 
-		fmt.Printf("Updated order %d status: %s\n", order.ID, status)
+		fmt.Printf("Routine #%d: Updated order %d status: %s\n", no, order.ID, status)
 	}
 }
 
