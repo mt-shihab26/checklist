@@ -46,13 +46,15 @@
 
 ## 5. Concurrency (Go’s Strength)
 
-* [ ] Goroutines
+* [x] Goroutines
+* [x] WaitGroups
+* [x] Mutex & synchronization
+  * [x] `sync.Mutex`
+  * [x] `sync.RWMutex`
 * [ ] Channels
   * [ ] Buffered channels
   * [ ] Unbuffered channels
 * [ ] Select statement
-* [ ] Mutex & synchronization
-* [ ] WaitGroups
 * [ ] Worker pools
 * [ ] Context package
 
