@@ -1,6 +1,7 @@
 package main
 
 import (
+	"concurrency/order"
 	"fmt"
 	"math/rand/v2"
 	"sync"
@@ -24,46 +25,29 @@ func main() {
 	fmt.Println("All operations completed. Exiting.")
 }
 
-type Order struct {
-	id     int
-	status string
-	mutex  sync.RWMutex
-}
-
-func (o *Order) Status() string {
-	o.mutex.RLock()
-	defer o.mutex.RUnlock()
-	return o.status
-}
-
-func (o *Order) SetStatus(status string) {
-	o.mutex.Lock()
-	defer o.mutex.Unlock()
-	o.status = status
-}
-
-func generatesOrders(count int) []*Order {
-	orders := []*Order{}
+func generatesOrders(count int) []*order.Order {
+	orders := []*order.Order{}
 	for i := range count {
-		orders = append(orders, &Order{id: i + 1, status: "pending"})
+		order := order.New(i+1, "pending")
+		orders = append(orders, &order)
 	}
 	return orders
 }
 
-func updateOrdersStatus(no int, orders []*Order) {
+func updateOrdersStatus(no int, orders []*order.Order) {
 	for _, order := range orders {
 		time.Sleep(time.Duration(rand.IntN(500) * int(time.Millisecond)))
 		status := []string{"processing", "shipped", "delivered"}[rand.IntN(3)]
 		order.SetStatus(status)
-		fmt.Printf("Routine #%d: Updated order %d status: %s\n", no, order.id, status)
+		fmt.Printf("Routine #%d: Updated order %d status: %s\n", no, order.ID(), status)
 	}
 }
 
-func reportOrderStatus(orders []*Order) {
+func reportOrderStatus(orders []*order.Order) {
 	time.Sleep(1 * time.Second)
 	fmt.Printf("--- Order Status Report ---\n")
 	for _, order := range orders {
-		fmt.Printf("Order %d: %s\n", order.id, order.status)
+		fmt.Printf("Order %d: %s\n", order.ID(), order.Status())
 	}
 	fmt.Println("----------------------------")
 }
